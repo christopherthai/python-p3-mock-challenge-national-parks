@@ -16,8 +16,8 @@ class NationalPark:
     def name(self, name):
         if isinstance(name, str) and not hasattr(self, "name") and len(name) >= 3:
             self.__name = name
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
     # Return a list of trips that have visited the national park
     def trips(self):
@@ -63,8 +63,8 @@ class Trip:
     def start_date(self, start_date):
         if isinstance(start_date, str) and len(start_date) >= 7:
             self._start_date = start_date
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
     # Create a property method that returns the national park of the trip
     @property
@@ -76,8 +76,8 @@ class Trip:
     def end_date(self, end_date):
         if isinstance(end_date, str) and len(end_date) >= 7:
             self._end_date = end_date
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
     # Create a property method that returns the visitor of the trip
     @property
@@ -89,8 +89,8 @@ class Trip:
     def visitor(self, visitor):
         if isinstance(visitor, Visitor):
             self._visitor = visitor
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
     # Create a property method that returns the national park of the trip
     @property
@@ -102,8 +102,8 @@ class Trip:
     def national_park(self, national_park):
         if isinstance(national_park, NationalPark):
             self._national_park = national_park
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
 
 class Visitor:
@@ -124,8 +124,8 @@ class Visitor:
     def name(self, name):
         if isinstance(name, str) and 1 <= len(name) <= 15:
             self._name = name
-        # else:
-        #     raise Exception
+        else:
+            raise Exception
 
     # Return a list of trips that the visitor has taken
     def trips(self):
@@ -137,8 +137,8 @@ class Visitor:
 
     # Return the total number of trips the visitor has taken
     def total_visits_at_park(self, park):
-        # if not isinstance(park, NationalPark):
-        #     raise Exception
+        if not isinstance(park, NationalPark):
+            raise Exception
 
         if not park.visitors():
             return 0
